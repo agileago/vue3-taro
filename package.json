@@ -9,21 +9,21 @@
 		"css": "sass"
 	},
 	"scripts": {
+		"dev:h5": "npm run build:h5 -- --watch",
+		"dev:weapp": "npm run build:weapp -- --watch",
+		"build:h5": "taro build --type h5",
 		"build:weapp": "taro build --type weapp",
 		"build:swan": "taro build --type swan",
 		"build:alipay": "taro build --type alipay",
 		"build:tt": "taro build --type tt",
-		"build:h5": "taro build --type h5",
 		"build:rn": "taro build --type rn",
 		"build:qq": "taro build --type qq",
 		"build:jd": "taro build --type jd",
 		"build:quickapp": "taro build --type quickapp",
-		"dev:weapp": "npm run build:weapp -- --watch",
 		"devtools:weapp": "npm run build:weapp -- --watch --devtools",
 		"dev:swan": "npm run build:swan -- --watch",
 		"dev:alipay": "npm run build:alipay -- --watch",
 		"dev:tt": "npm run build:tt -- --watch",
-		"dev:h5": "npm run build:h5 -- --watch",
 		"dev:rn": "npm run build:rn -- --watch",
 		"dev:qq": "npm run build:qq -- --watch",
 		"dev:jd": "npm run build:jd -- --watch",
@@ -45,10 +45,13 @@
 		"@tarojs/plugin-html": "3.3.12",
 		"@tarojs/runtime": "3.4.0",
 		"@tarojs/taro": "3.4.0",
-		"taro-axios": "^1.1.1",
-		"vue": "^3.0.0",
+		"injection-js": "^2.4.0",
 		"pinia": "^2.0.5",
-		"taro-plugin-pinia": "^1.0.0"
+		"taro-axios": "^1.1.1",
+		"taro-plugin-pinia": "^1.0.0",
+		"tslib": "^2.3.1",
+		"vue": "^3.0.0",
+		"vue3-oop": "^0.2.8"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.8.0",
@@ -70,10 +73,11 @@
 		"eslint-plugin-prettier": "^3.3.1",
 		"eslint-plugin-vue": "^7.0.0",
 		"husky": "^7.0.4",
+		"lint-staged": "^10.5.4",
 		"stylelint": "9.3.0",
+		"ts-loader": "~8.2.0",
 		"typescript": "^4.1.0",
 		"vue-loader": "^16.0.0-beta.8",
-		"vue-tsc": "^0.29.3",
-		"lint-staged": "^10.5.4"
+		"vue-tsc": "^0.29.3"
 	}
 }

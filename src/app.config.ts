@@ -10,7 +10,7 @@ export default defineAppConfig({
   subpackages: [
     {
       root: 'pages/featureA',
-      pages: ['index/index', 'nutui/index', 'request/index', 'css/index'],
+      pages: ['css/index'],
     },
   ],
 })

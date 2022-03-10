@@ -1,13 +1,19 @@
 {
   "compilerOptions": {
     "target": "es2017",
-    "module": "commonjs",
+    "module": "ESNext",
     "removeComments": false,
     "preserveConstEnums": true,
     "moduleResolution": "node",
     "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "useDefineForClassFields": false,
+    "preserveValueImports": true,
+    "importsNotUsedAsValues": "error",
+    "skipLibCheck": true,
     "noImplicitAny": false,
     "allowSyntheticDefaultImports": true,
+    "importHelpers": true,
     "outDir": "lib",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -15,7 +21,7 @@
     "sourceMap": true,
     "baseUrl": ".",
     "rootDir": ".",
-    "jsx": "react-jsx",
+    "jsx": "preserve",
     "allowJs": true,
     "resolveJsonModule": true,
     "typeRoots": [
@@ -26,7 +32,7 @@
       "@/*": [
         "src/*"
       ]
-    },
+    }
   },
   "exclude": [
     "node_modules",
