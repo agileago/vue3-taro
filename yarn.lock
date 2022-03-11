@@ -16713,10 +16713,10 @@ vue-tsc@^0.29.3:
     "@volar/shared" "0.29.8"
     vscode-vue-languageservice "0.29.8"
 
-vue3-oop@^0.2.8:
-  version "0.2.8"
-  resolved "https://registry.npmmirror.com/vue3-oop/-/vue3-oop-0.2.8.tgz#342841e14dc1313b05594ef87e9e30375a5a05de"
-  integrity sha512-/r5Bwp/Oyq4NxRNkewbwPzW8MY0mY/5HwPzLRrrZgIPBEHCovNv6gM1kKqPTaQFZdjQW8R51g+P42cAsuvw81Q==
+vue3-oop@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.npmmirror.com/vue3-oop/-/vue3-oop-0.3.0.tgz#9f2d5892a054be111aff3ffd4af4fb15726bc4ca"
+  integrity sha512-FYrUfAQqbhW/m94sNsHOzmkFrj/joYeaghvv6q+0J7fsE2vR9it8HeiIAlbbonruxnTO3RmdPifAs7ZDya59Sg==
 
 vue@^3.0.0:
   version "3.2.31"

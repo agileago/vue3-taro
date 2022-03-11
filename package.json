@@ -51,7 +51,7 @@
 		"taro-plugin-pinia": "^1.0.0",
 		"tslib": "^2.3.1",
 		"vue": "^3.0.0",
-		"vue3-oop": "^0.2.8"
+		"vue3-oop": "^0.3.0"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.8.0",

@@ -17,6 +17,7 @@ export default class Index extends VueComponent {
       Taro.navigateTo({ url: '/pages/featureA/nutui/index' })
     }
     render() {
+      console.log(this.props)
       return (
         <>
           <div class={styles.abc}>aaaaaa</div>

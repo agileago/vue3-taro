@@ -1,15 +1,13 @@
-import { createApp, provide } from 'vue'
+import { createApp } from 'vue'
 import setNutUi from './nutui'
 import './app.scss'
-import { InjectorKey } from 'vue3-oop'
+import { Component, VueComponent } from 'vue3-oop'
 import { CountService } from '@/stores/count.service'
-import { ReflectiveInjector } from 'injection-js'
 
-const app = createApp({
-  setup() {
-    const injector = ReflectiveInjector.resolveAndCreate([CountService])
-    provide(InjectorKey, injector)
-  }
-})
+@Component({providers: [CountService]})
+class App extends VueComponent {
+}
+
+const app = createApp(App)
 setNutUi(app)
 export default app
