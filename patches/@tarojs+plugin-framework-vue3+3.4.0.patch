@@ -1,0 +1,33 @@
+diff --git a/node_modules/@tarojs/plugin-framework-vue3/dist/runtime.js b/node_modules/@tarojs/plugin-framework-vue3/dist/runtime.js
+index cecd4d6..71bd186 100644
+--- a/node_modules/@tarojs/plugin-framework-vue3/dist/runtime.js
++++ b/node_modules/@tarojs/plugin-framework-vue3/dist/runtime.js
+@@ -73,6 +73,10 @@ const setGlobalDataPlugin = {
+     }
+ };
+ 
++function isClassComponent (value) {
++  return isFunction(value) && '__vccOpts' in value
++}
++
+ /**
+  * set writable, enumerable to true
+  */
+@@ -127,6 +131,8 @@ function setReconciler() {
+ function createVue3Page(h, id) {
+     return function (component) {
+         var _a;
++      // 处理类组件
++        component = isClassComponent(component) ? component.__vccOpts : component
+         const inject = {
+             props: {
+                 tid: String
+@@ -177,7 +183,7 @@ function createVue3Page(h, id) {
+ function createVue3App(app, h, config) {
+     let pages = [];
+     let appInstance;
+-    ensure(!isFunction(app._component), '入口组件不支持使用函数式组件');
++    ensure(!(isFunction(app._component) && !isClassComponent(app._component)), '入口组件不支持使用函数式组件');
+     setReconciler();
+     app._component.render = function () {
+         return pages.slice();

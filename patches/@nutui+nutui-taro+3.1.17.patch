@@ -1,0 +1,12 @@
+diff --git a/node_modules/@nutui/nutui-taro/dist/nutui.d.ts b/node_modules/@nutui/nutui-taro/dist/nutui.d.ts
+index 539ab55..d080235 100644
+--- a/node_modules/@nutui/nutui-taro/dist/nutui.d.ts
++++ b/node_modules/@nutui/nutui-taro/dist/nutui.d.ts
+@@ -1,6 +1,7 @@
+ import { App } from 'vue';
+ declare class UIComponent {
+   static install(vue: App): void;
++  $props: any
+ }
+ declare class Avatar extends UIComponent {}
+ declare class Button extends UIComponent {}
