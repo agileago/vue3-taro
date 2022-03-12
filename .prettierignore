@@ -1,0 +1,8 @@
+.editorconfig
+.gitignore
+.prettierignore
+.idea
+node_modules
+dist
+pnpm-lock.yaml
+*.d.ts

@@ -1,8 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es2017",
+    "target": "ES2021",
     "module": "ESNext",
-    "removeComments": false,
     "preserveConstEnums": true,
     "moduleResolution": "node",
     "experimentalDecorators": true,
@@ -15,28 +14,16 @@
     "allowSyntheticDefaultImports": true,
     "importHelpers": true,
     "outDir": "lib",
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "strictNullChecks": true,
     "sourceMap": true,
     "baseUrl": ".",
     "rootDir": ".",
     "jsx": "preserve",
-    "allowJs": true,
     "resolveJsonModule": true,
-    "typeRoots": [
-      "node_modules/@types",
-      "global.d.ts"
-    ],
+    "types": ["@tarojs/taro"],
+    "typeRoots": ["node_modules/@types", "global.d.ts"],
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
+      "@/*": ["src/*"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "dist"
-  ],
-  "compileOnSave": false
+  "exclude": ["node_modules", "dist"]
 }

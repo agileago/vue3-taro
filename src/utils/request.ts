@@ -1,9 +1,6 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from 'taro-axios'
 import Taro from '@tarojs/taro'
 
-// import { useRouter } from 'vue-router'
-// 根据自身规范修改![](https://tva1.sinaimg.cn/large/008i3skNgy1gxfn11mr8yj314w0u0tdg.jpg)
-
 const instance = axios.create({
   // 超时时间 1 分钟
   timeout: 30 * 1000,
@@ -61,7 +58,7 @@ export default function request<T>(options: AxiosRequestConfig = {}) {
           throw response
         }
       })
-      .catch((result) => {
+      .catch(result => {
         if (result?.status === 200 && result?.data?.code === -1) {
           //重新登陆 result?.data?.code === -1 ||
         } else {

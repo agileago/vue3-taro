@@ -1,20 +1,34 @@
 module.exports = {
   root: true,
-
   env: {
     node: true,
+    browser: true,
   },
-
-  extends: ['plugin:vue/vue3-essential', 'eslint:recommended'],
-
+  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended'],
+  plugins: ['@typescript-eslint'],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    parser: '@typescript-eslint/parser',
-  },
-  globals: {
-    wx: 'readonly',
+    ecmaVersion: 2020,
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true,
+    },
   },
   rules: {
-    'no-unused-vars': 'off'
+    '@typescript-eslint/unbound-method': 'off',
+    '@typescript-eslint/ban-ts-comment': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-empty-function': 'warn',
+    '@typescript-eslint/ban-types': [
+      'error',
+      {
+        extendDefaults: true,
+        types: {
+          '{}': false,
+        },
+      },
+    ],
+    '@typescript-eslint/no-explicit-any': 'off',
+    'no-debugger': 'warn',
   },
 }
-//可以添加规则 禁止删除忽略规则 请严格执行

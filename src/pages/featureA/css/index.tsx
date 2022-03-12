@@ -7,11 +7,13 @@ import { Button } from '@nutui/nutui-taro'
 
 @Component()
 export default class Css extends VueComponent {
-  constructor(@SkipSelf() private countService: CountService) {super()}
+  constructor(@SkipSelf() private countService: CountService) {
+    super()
+  }
 
   @Hook('Mounted')
   mounted() {
-    Taro.showToast({title: 'css mounted'})
+    Taro.showToast({ title: 'css mounted' })
   }
   render() {
     const { countService } = this
@@ -19,7 +21,7 @@ export default class Css extends VueComponent {
       <>
         <h2>关闭页面再返回查看状态是否保持</h2>
         <Button onClick={countService.add}>+</Button>
-        <text style={{verticalAlign: '10px'}}>{countService.count}</text>
+        <text style={{ verticalAlign: '10px' }}>{countService.count}</text>
         <Button onClick={countService.remove}>-</Button>
       </>
     )

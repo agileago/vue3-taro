@@ -1,14 +1,14 @@
 const path = require('path')
 
+/**
+ *
+ * @type {import('@tarojs/taro/types/compile').IProjectConfig}
+ */
 const config = {
-  projectName: 'WechatAppDemo',
-  date: '2021-11-12',
-  designWidth: 375,
-  deviceRatio: {
-    640: 2.34 / 2,
-    750: 1,
-    828: 1.81 / 2,
-    375: 2 / 1,
+  projectName: 'vue3taro',
+  framework: 'vue3',
+  env: {
+    NODE_ENV: JSON.stringify(process.env.NODE_ENV)
   },
   alias: {
     '@': path.resolve(__dirname, '..', 'src'),
@@ -25,8 +25,7 @@ const config = {
   mini: {
     postcss: {
       pxtransform: {
-        enable: true,
-        config: {},
+        enable: false,
       },
       url: {
         enable: true,
@@ -43,6 +42,7 @@ const config = {
       },
     },
     webpackChain: (chain) => {
+      // 增加ts原生编译
       chain.merge({
         module: {
           rule: {
@@ -66,6 +66,9 @@ const config = {
     publicPath: '/',
     staticDirectory: 'static',
     postcss: {
+      pxtransform: {
+        enable: false,
+      },
       autoprefixer: {
         enable: true,
         config: {},
@@ -96,13 +99,9 @@ const config = {
           },
         },
       })
+      // chain.plugin('analyzer')
+      //   .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin, [])
     },
   },
 }
-
-module.exports = function(merge) {
-  if (process.env.NODE_ENV === 'development') {
-    return merge({}, config, require('./dev'))
-  }
-  return merge({}, config, require('./prod'))
-}
+module.exports = () => config
