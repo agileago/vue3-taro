@@ -4,6 +4,4 @@ dist
 coverage
 public
 *.d.ts
-vue.config.js
-.eslintrc.js
-config
+*.js

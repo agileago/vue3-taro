@@ -18,6 +18,7 @@ specifiers:
   '@types/webpack-env': ^1.13.6
   '@typescript-eslint/eslint-plugin': ^5.14.0
   '@typescript-eslint/parser': ^5.14.0
+  '@vue3-oop/babel-plugin-jsx': ^1.1.1
   babel-plugin-import: ^1.13.3
   babel-preset-taro: 3.4.3
   commitizen: ^4.2.4
@@ -35,7 +36,7 @@ specifiers:
   typescript: ^4.1.0
   vue: ^3.0.0
   vue-loader: ^17.0.0
-  vue3-oop: ^0.3.0
+  vue3-oop: ^0.3.1
   yorkie: ^2.0.0
 
 dependencies:
@@ -46,7 +47,7 @@ dependencies:
   taro-axios: 1.1.1_@tarojs+taro@3.4.3
   tslib: 2.3.1
   vue: 3.2.31
-  vue3-oop: 0.3.0_injection-js@2.4.0+vue@3.2.31
+  vue3-oop: 0.3.1_injection-js@2.4.0+vue@3.2.31
 
 devDependencies:
   '@babel/core': 7.17.5
@@ -63,6 +64,7 @@ devDependencies:
   '@types/webpack-env': 1.16.3
   '@typescript-eslint/eslint-plugin': 5.14.0_ace6f9e7722b813e21eaf2dc993bc413
   '@typescript-eslint/parser': 5.14.0_eslint@8.11.0+typescript@4.6.2
+  '@vue3-oop/babel-plugin-jsx': 1.1.1_@babel+core@7.17.5
   babel-plugin-import: 1.13.3
   babel-preset-taro: 3.4.3_@babel+core@7.17.5
   commitizen: 4.2.4
@@ -3030,6 +3032,23 @@ packages:
   /@vue/shared/3.2.31:
     resolution: {integrity: sha512-ymN2pj6zEjiKJZbrf98UM2pfDd6F2H7ksKw7NDt/ZZ1fh5Ei39X5tABugtT03ZRlWd9imccoK0hE8hpjpU7irQ==}
     dev: false
+
+  /@vue3-oop/babel-plugin-jsx/1.1.1_@babel+core@7.17.5:
+    resolution: {integrity: sha512-kzpHMB7CUH6QoNsFGk7DOceb8tIscTDPfNiBIgokfyQ9P85Pmost1+XiDBTccsc1aoIwdOTG9aeDZjBnVQEUvw==}
+    dependencies:
+      '@babel/helper-module-imports': 7.16.7
+      '@babel/plugin-syntax-jsx': 7.16.7_@babel+core@7.17.5
+      '@babel/template': 7.16.7
+      '@babel/traverse': 7.17.3
+      '@babel/types': 7.17.0
+      '@vue/babel-helper-vue-transform-on': 1.0.2
+      camelcase: 6.3.0
+      html-tags: 3.1.0
+      svg-tags: 1.0.0
+    transitivePeerDependencies:
+      - '@babel/core'
+      - supports-color
+    dev: true
 
   /@webassemblyjs/ast/1.9.0:
     resolution: {integrity: sha1-vYUGBLQEJFmlpBzX0zjL7Wle2WQ=, tarball: '@webassemblyjs/ast/download/@webassemblyjs/ast-1.9.0.tgz'}
@@ -14454,8 +14473,8 @@ packages:
       '@vue/shared': 3.2.31
     dev: false
 
-  /vue3-oop/0.3.0_injection-js@2.4.0+vue@3.2.31:
-    resolution: {integrity: sha512-FYrUfAQqbhW/m94sNsHOzmkFrj/joYeaghvv6q+0J7fsE2vR9it8HeiIAlbbonruxnTO3RmdPifAs7ZDya59Sg==}
+  /vue3-oop/0.3.1_injection-js@2.4.0+vue@3.2.31:
+    resolution: {integrity: sha512-YnXsKavCUgtysEIGkpH9nSrlTtL/uHRT8GWaaweD9RnojwX9YzF0oz/lK8OD+6nymfCWP2I8MOPf/DXE5xgn6g==}
     peerDependencies:
       '@abraham/reflection': '*'
       injection-js: ^2.4.0

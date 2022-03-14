@@ -1,14 +1,21 @@
-import Taro from '@tarojs/taro'
+import Taro, { useReady } from '@tarojs/taro'
 import styles from './index.module.scss'
 import { Avatar, Badge } from '@nutui/nutui-taro'
 import { Hook, VueComponent } from 'vue3-oop'
 
 export default class Index extends VueComponent {
+  constructor() {
+    super()
+    useReady(() => {
+      console.log('ready')
+    })
+  }
+
   goCount = () => {
     Taro.navigateTo({ url: '/pages/featureA/css/index' })
   }
 
-  @Hook('BeforeUnmount')
+  @Hook('Mounted')
   destroy() {
     console.log('BeforeUnmount index')
   }
