@@ -1,5 +1,8 @@
 const path = require('path')
 
+// 模式 区分环境
+const mode = process.env.MODE || process.env.NODE_ENV || 'development'
+
 /**
  *
  * @type {import('@tarojs/taro/types/compile').IProjectConfig}
@@ -16,7 +19,9 @@ const config = {
   sourceRoot: 'src',
   outputRoot: 'dist',
   plugins: ['@tarojs/plugin-html'],
-  defineConstants: {},
+  defineConstants: {
+    'process.env.MODE': JSON.stringify(mode),
+  },
   copy: {
     patterns: [],
     options: {},
@@ -99,6 +104,11 @@ const config = {
           },
         },
       })
+      chain.plugin('htmlWebpackPlugin')
+        .tap(args => {
+          args[0].template = path.resolve(__dirname, '../public/index.html')
+          return args
+        })
       // chain.plugin('analyzer')
       //   .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin, [])
     },

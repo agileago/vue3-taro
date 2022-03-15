@@ -19,7 +19,7 @@
     "rootDir": ".",
     "jsx": "preserve",
     "resolveJsonModule": true,
-    "types": ["@tarojs/taro"],
+    "types": ["@tarojs/taro", "webpack-env", "vite/client"],
     "typeRoots": ["node_modules/@types", "global.d.ts"],
     "paths": {
       "@/*": ["src/*"]

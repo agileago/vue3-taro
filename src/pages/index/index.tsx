@@ -1,21 +1,19 @@
-import Taro, { useReady } from '@tarojs/taro'
+import Taro from '@tarojs/taro'
 import styles from './index.module.scss'
-import { Avatar, Badge } from '@nutui/nutui-taro'
-import { Hook, VueComponent } from 'vue3-oop'
+import { Avatar, Badge, Button } from '@nutui/nutui-taro'
+import { VueComponent } from 'vue3-oop'
+import { MiniHook } from '@/common/hooks'
 
 export default class Index extends VueComponent {
   constructor() {
     super()
-    useReady(() => {
-      console.log('ready')
-    })
   }
 
   goCount = () => {
-    Taro.navigateTo({ url: '/pages/featureA/css/index' })
+    Taro.navigateTo({ url: '/pages/sub/count/index' })
   }
 
-  @Hook('Mounted')
+  @MiniHook('Ready')
   destroy() {
     console.log('BeforeUnmount index')
   }
@@ -28,7 +26,7 @@ export default class Index extends VueComponent {
         <Badge value={8}>
           <Avatar icon={'my'} shape={'square'}></Avatar>
         </Badge>
-        <nut-button onClick={this.goCount}>跳转数字增加页面</nut-button>
+        <Button onClick={this.goCount}>跳转数字增加页面</Button>
       </>
     )
   }

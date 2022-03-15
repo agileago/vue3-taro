@@ -9,8 +9,8 @@ export default defineAppConfig({
   },
   subpackages: [
     {
-      root: 'pages/featureA',
-      pages: ['css/index'],
+      root: 'pages/sub',
+      pages: ['count/index'],
     },
   ],
 })
