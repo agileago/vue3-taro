@@ -1,10 +1,39 @@
 import type { Hanlder } from 'vue3-oop'
 import { createDecorator, getProtoMetadata, VueComponent } from 'vue3-oop'
-import { useReady } from '@tarojs/taro'
+import {
+  useAddToFavorites,
+  useDidHide,
+  useDidShow,
+  useOptionMenuClick,
+  usePageScroll,
+  usePullDownRefresh,
+  usePullIntercept,
+  useReachBottom,
+  useReady,
+  useResize,
+  useShareAppMessage,
+  useShareTimeline,
+  useTabItemTap,
+  useTitleClick,
+} from '@tarojs/taro'
 
 export const MiniHook: MiniHookDecorator = createDecorator('MiniHook', true)
 
-type LifeCycle = 'Ready'
+type LifeCycle =
+  | 'Ready'
+  | 'DidShow'
+  | 'DidHide'
+  | 'PullDownRefresh'
+  | 'ReachBottom'
+  | 'PageScroll'
+  | 'Resize'
+  | 'ShareAppMessage'
+  | 'TabItemTap'
+  | 'ShareTimeline'
+  | 'AddToFavorites'
+  | 'TitleClick'
+  | 'OptionMenuClick'
+  | 'PullIntercept'
 
 interface MiniHookDecorator {
   (lifecycle: LifeCycle | LifeCycle[]): MethodDecorator
@@ -27,6 +56,48 @@ function handler(targetThis: any) {
       switch (option) {
         case 'Ready':
           vueFn = useReady
+          break
+        case 'DidShow':
+          vueFn = useDidShow
+          break
+        case 'DidHide':
+          vueFn = useDidHide
+          break
+        case 'PullDownRefresh':
+          vueFn = usePullDownRefresh
+          break
+        case 'ReachBottom':
+          vueFn = useReachBottom
+          break
+        case 'PageScroll':
+          vueFn = usePageScroll
+          break
+        case 'Resize':
+          vueFn = useResize
+          break
+        case 'ShareAppMessage':
+          vueFn = useShareAppMessage
+          break
+        case 'TabItemTap':
+          vueFn = useTabItemTap
+          break
+        case 'ShareTimeline':
+          vueFn = useShareTimeline
+          break
+        case 'AddToFavorites':
+          vueFn = useAddToFavorites
+          break
+        case 'TitleClick':
+          vueFn = useTitleClick
+          break
+        case 'OptionMenuClick':
+          vueFn = useOptionMenuClick
+          break
+        case 'PullIntercept':
+          vueFn = usePullIntercept
+          break
+        default:
+          const exhaustiveCheck: never = option
           break
       }
       doneLife[option] = true

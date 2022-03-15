@@ -19,7 +19,6 @@ export default class Index extends VueComponent {
   }
 
   render() {
-    console.log(this.props)
     return (
       <>
         <div class={styles.abc}>aaaaaa</div>
