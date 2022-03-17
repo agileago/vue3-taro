@@ -17,8 +17,12 @@ const config = {
     '@': path.resolve(__dirname, '..', 'src'),
   },
   sourceRoot: 'src',
-  outputRoot: 'dist',
-  plugins: ['@tarojs/plugin-html'],
+  outputRoot: `dist/${process.env.TARO_ENV}`,
+  plugins: [
+    '@tarojs/plugin-html',
+    // 处理微信原生组件在h5下的问题
+    path.resolve(__dirname, '..', './plugins/dist-h5/index.js')
+  ],
   defineConstants: {
     'process.env.MODE': JSON.stringify(mode),
   },
@@ -77,16 +81,6 @@ const config = {
     postcss: {
       pxtransform: {
         enable: false,
-      },
-      url: {
-        enable: true,
-        config: {
-          limit: 1024, // 设定转换尺寸上限
-        },
-      },
-      autoprefixer: {
-        enable: true,
-        config: {},
       },
       cssModules: {
         enable: true,
