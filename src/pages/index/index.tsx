@@ -33,15 +33,13 @@ export default class Index extends VueComponent {
   render() {
     return (
       <>
-        <View class={styles.abc} ref={this.abc}>
-          aaaaaa
-        </View>
+        <View class={styles.abc}>aaaaaa</View>
         <Badge value={8}>
           <Avatar icon={'my'} shape={'square'}></Avatar>
         </Badge>
         <Button onClick={this.goCount}>跳转数字增加页面</Button>
         <TaroButton>aaaa</TaroButton>
-        <Checkbox v-model:checked={this.checked}></Checkbox>
+        <Checkbox v-model:checked={this.checked} ref={this.abc}></Checkbox>
         <Input v-model={this.input}></Input>
       </>
     )
