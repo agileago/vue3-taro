@@ -39,7 +39,7 @@
     "@milahu/patch-package-with-pnpm-support": "^6.4.8",
     "@tarojs/cli": "3.4.4",
     "@tarojs/mini-runner": "3.4.4",
-    "@tarojs/plugin-framework-vue3": "3.4.4",
+    "@tarojs/plugin-framework-vue3": "^3.4.4",
     "@tarojs/plugin-html": "3.4.4",
     "@tarojs/runner-utils": "^3.4.4",
     "@tarojs/runtime": "3.4.4",

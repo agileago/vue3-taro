@@ -4,7 +4,7 @@ import { Avatar, Badge, Button } from '@nutui/nutui-taro'
 import { Autobind, Link, Mut, VueComponent } from 'vue3-oop'
 import { MiniHook } from '@/common/hooks'
 import { watch } from 'vue'
-import { Button as TaroButton, Checkbox, Input, View } from '@tarojs/components'
+import { Ad, Button as TaroButton, Checkbox, Input, View } from '@tarojs/components'
 
 export default class Index extends VueComponent {
   constructor() {
@@ -38,6 +38,7 @@ export default class Index extends VueComponent {
   render() {
     return (
       <>
+        <Ad></Ad>
         <View>aaaa</View>
         <div class={styles.abc}>aaaaaa</div>
         <Badge value={8}>

@@ -10,7 +10,7 @@ specifiers:
   '@tarojs/cli': 3.4.4
   '@tarojs/components': 3.4.4
   '@tarojs/mini-runner': 3.4.4
-  '@tarojs/plugin-framework-vue3': 3.4.4
+  '@tarojs/plugin-framework-vue3': ^3.4.4
   '@tarojs/plugin-html': 3.4.4
   '@tarojs/runner-utils': ^3.4.4
   '@tarojs/runtime': 3.4.4
@@ -11895,7 +11895,7 @@ packages:
     dependencies:
       css-selector-tokenizer: 0.7.3
       icss-utils: 3.0.1
-      minimist: 1.2.5
+      minimist: 1.2.6
       postcss: 6.0.23
     dev: true
 
