@@ -1,10 +1,11 @@
-# 使用 Taro3 + Vue3 + TypeScript + Tsx + ClassComponent + DI 开发微信小程序
+# 使用vue3-oop开发小程序
+
+- vue3
+- tsx + vue3-oop
+- 依赖注入
+- windicss
 
 ```shell
 pnpm install
+pnpm run dev:h5
 ```
-
-使用 `patch-package` 修改了一下使用的包
-
-1. `@nutui/nutui-taro` 修复类型文件
-2. `@tarojs/plugin-framework-vue3` 支持类组件
