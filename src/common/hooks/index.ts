@@ -1,5 +1,5 @@
 import type { Hanlder } from 'vue3-oop'
-import { createDecorator, getProtoMetadata, VueComponent } from 'vue3-oop'
+import { createDecorator, getProtoMetadata, VueComponent, VueService } from 'vue3-oop'
 import {
   useAddToFavorites,
   useDidHide,
@@ -112,3 +112,4 @@ const MiniHookHandler: Hanlder = {
 }
 
 VueComponent.handler.push(MiniHookHandler)
+VueService.handler.push(MiniHookHandler)

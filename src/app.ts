@@ -1,3 +1,4 @@
+import 'windi.css'
 import './theme/app.scss'
 
 import { createApp } from 'vue'

@@ -22,7 +22,8 @@ const config = {
   plugins: [
     '@tarojs/plugin-html',
     // 处理微信原生组件在h5下的问题
-    path.resolve(__dirname, '..', './plugins/dist-h5/index.js')
+    path.resolve(__dirname, '..', './plugins/dist-h5/index.js'),
+    'taro-plugin-tailwind',
   ],
   defineConstants: {
     'process.env.MODE': JSON.stringify(mode),
