@@ -1,9 +1,9 @@
 import Taro from '@tarojs/taro'
 import styles from './index.module.scss'
 import { Avatar, Badge, Button } from '@nutui/nutui-taro'
-import { Mut, VueComponent } from 'vue3-oop'
+import { Autobind, Link, Mut, VueComponent } from 'vue3-oop'
 import { MiniHook } from '@/common/hooks'
-import { ref, watch } from 'vue'
+import { watch } from 'vue'
 import { Button as TaroButton, Checkbox, Input, View } from '@tarojs/components'
 
 export default class Index extends VueComponent {
@@ -22,24 +22,30 @@ export default class Index extends VueComponent {
   @MiniHook('Ready')
   destroy() {
     console.log('BeforeUnmount index')
-    console.log(this.abc.value)
+    console.log(this.abc)
   }
 
-  abc = ref()
+  @Link() abc: any
 
   @Mut() checked = true
   @Mut() input = ''
 
+  @Autobind()
+  handleScroll(e) {
+    console.log(e)
+  }
+
   render() {
     return (
       <>
-        <View class={styles.abc}>aaaaaa</View>
+        <View>aaaa</View>
+        <div class={styles.abc}>aaaaaa</div>
         <Badge value={8}>
           <Avatar icon={'my'} shape={'square'}></Avatar>
         </Badge>
         <Button onClick={this.goCount}>跳转数字增加页面</Button>
         <TaroButton>aaaa</TaroButton>
-        <Checkbox v-model:checked={this.checked} ref={this.abc}></Checkbox>
+        <Checkbox v-model:checked={this.checked} ref={'abc'}></Checkbox>
         <Input v-model={this.input}></Input>
       </>
     )

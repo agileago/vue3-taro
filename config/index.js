@@ -1,4 +1,5 @@
 const path = require('path')
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 
 // 模式 区分环境
 const mode = process.env.MODE || process.env.NODE_ENV || 'development'
@@ -73,6 +74,8 @@ const config = {
           },
         },
       })
+      chain.plugin('forkTsCheckerPlugin')
+        .use(ForkTsCheckerWebpackPlugin)
     },
   },
   h5: {
@@ -108,6 +111,24 @@ const config = {
           },
         },
       })
+      if (process.env.NODE_ENV === 'development') {
+        chain.merge({
+          module: {
+            rule: {
+              script: {
+                use: {
+                  hotLoader: {
+                    loader: '@vue3-oop/jsx-hot-loader',
+                    after: 'tsloader',
+                  },
+                },
+              },
+            },
+          },
+        })
+      }
+      chain.plugin('forkTsCheckerPlugin')
+        .use(ForkTsCheckerWebpackPlugin)
       chain.plugin('htmlWebpackPlugin')
         .tap(args => {
           args[0].template = path.resolve(__dirname, '../public/index.html')
