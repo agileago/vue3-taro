@@ -9,10 +9,10 @@
     "css": "sass"
   },
   "scripts": {
-    "dev:weapp": "pnpm run build:weapp -- --watch",
+    "dev:weapp": "pnpm run build:weapp --watch",
     "uat:weapp": "cross-env MODE=uat pnpm run build:weapp",
     "build:weapp": "taro build --type weapp",
-    "dev:h5": "pnpm run build:h5 -- --watch",
+    "dev:h5": "pnpm run build:h5 --watch",
     "uat:h5": "cross-env MODE=uat pnpm run build:h5",
     "build:h5": "taro build --type h5",
     "preview:h5": "serve -s dist",
