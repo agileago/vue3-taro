@@ -1,9 +1,9 @@
 import Taro from '@tarojs/taro'
-import { Avatar, Badge, Button } from '@nutui/nutui-taro'
+import { Avatar, Badge } from '@nutui/nutui-taro'
 import { Autobind, Link, Mut, VueComponent } from 'vue3-oop'
 import { MiniHook } from '@/common/hooks'
 import { watch } from 'vue'
-import { Button as TaroButton, Checkbox, Input, Picker, View } from '@tarojs/components'
+import { Button, Checkbox, Input, Picker, View } from '@tarojs/components'
 
 export default class Index extends VueComponent {
   constructor() {
@@ -25,14 +25,13 @@ export default class Index extends VueComponent {
   }
 
   @Link() abc: any
+  @Link() button: Button
 
   @Mut() checked = true
   @Mut() input = ''
 
   @Autobind()
-  handleScroll(e) {
-    console.log(e)
-  }
+  handleScroll(e) {}
 
   @Autobind()
   handleChange(e) {
@@ -45,6 +44,10 @@ export default class Index extends VueComponent {
 
   @Link() picker: any
 
+  getUserInfo: Button['props']['onGetUserInfo'] = e => {
+    console.log(e)
+  }
+
   render() {
     return (
       <>
@@ -52,16 +55,12 @@ export default class Index extends VueComponent {
         <Badge value={8}>
           <Avatar icon={'my'} shape={'square'}></Avatar>
         </Badge>
-        <Button onClick={this.goCount}>跳转数字增加页面</Button>
-        <TaroButton>aaaa</TaroButton>
-        <Checkbox v-model:checked={this.checked} ref={'abc'}></Checkbox>
+        <Button type={'primary'} ref={'button'} onGetUserInfo={this.getUserInfo}>
+          aaaa
+        </Button>
+        <Checkbox value={'aaa'} checked ref={'abc'}></Checkbox>
         <Input v-model={this.input}></Input>
-        <Picker
-          mode="selector"
-          range={['美国', '中国', '巴西', '日本']}
-          onChange={this.handleChange}
-          ref={'picker'}
-        >
+        <Picker range={['美国']} mode="selector" onChange={this.handleChange} ref={'picker'}>
           <View>当前选择: {this.selectorChecked}</View>
         </Picker>
       </>
