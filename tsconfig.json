@@ -11,6 +11,8 @@
     "importsNotUsedAsValues": "error",
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
+    "strict": true,
+    "strictPropertyInitialization": false,
     "noImplicitAny": false,
     "allowSyntheticDefaultImports": true,
     "importHelpers": true,
