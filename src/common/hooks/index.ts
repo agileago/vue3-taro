@@ -101,7 +101,7 @@ function handler(targetThis: any) {
           break
       }
       doneLife[option] = true
-      vueFn(() => targetThis[item.key]())
+      vueFn((...args: any[]) => targetThis[item.key](...args))
     }
   }
 }
