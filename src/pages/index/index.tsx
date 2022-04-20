@@ -19,10 +19,10 @@ export default class Index extends VueComponent {
     return (
       <>
         <h2>当前数字： {countService.count}</h2>
-        <Button type={'primary'} onTap={countService.add}>
+        <Button type={'primary'} onClick={countService.add}>
           加
         </Button>
-        <Button type={'primary'} onTap={countService.remove}>
+        <Button type={'primary'} onClick={countService.remove}>
           减
         </Button>
 

@@ -3,10 +3,11 @@ import { Component, Hook, VueComponent } from 'vue3-oop'
 import { CountService } from '@/service/count.service'
 import Taro from '@tarojs/taro'
 import { Button } from '@nutui/nutui-taro'
+import { SkipSelf } from 'injection-js'
 
 @Component()
 export default class Css extends VueComponent {
-  constructor(private countService: CountService) {
+  constructor(@SkipSelf() private countService: CountService) {
     super()
   }
 
