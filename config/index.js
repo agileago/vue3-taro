@@ -73,8 +73,8 @@ const config = {
           },
         },
       })
-      chain.plugin('forkTsCheckerPlugin')
-        .use(ForkTsCheckerWebpackPlugin)
+      // chain.plugin('forkTsCheckerPlugin')
+      //   .use(ForkTsCheckerWebpackPlugin)
     },
   },
   h5: {
@@ -126,8 +126,8 @@ const config = {
           },
         })
       }
-      chain.plugin('forkTsCheckerPlugin')
-        .use(ForkTsCheckerWebpackPlugin)
+      // chain.plugin('forkTsCheckerPlugin')
+      //   .use(ForkTsCheckerWebpackPlugin)
       chain.plugin('htmlWebpackPlugin')
         .tap(args => {
           args[0].template = path.resolve(__dirname, '../public/index.html')
