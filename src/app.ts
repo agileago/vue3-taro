@@ -13,7 +13,7 @@ import { setup } from '@/setup'
 class App extends VueComponent {
   @Hook('Mounted')
   mounted() {
-    setTimeout(() => Taro.showToast({ title: 'mounted', duration: 3000 }), 1000)
+    Taro.showToast({ title: 'mounted', duration: 3000 })
   }
 }
 

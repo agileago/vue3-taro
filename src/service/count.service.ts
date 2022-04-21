@@ -7,6 +7,6 @@ export class CountService extends VueService {
     this.count++
   }
   remove() {
-    this.count--
+    this.count++
   }
 }

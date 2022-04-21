@@ -1,6 +1,6 @@
 import './index.scss'
-import { SkipSelf } from 'injection-js'
 import { Component, Hook, VueComponent } from 'vue3-oop'
+import { SkipSelf } from 'injection-js'
 import { CountService } from '@/service/count.service'
 import Taro from '@tarojs/taro'
 import { Button } from '@nutui/nutui-taro'

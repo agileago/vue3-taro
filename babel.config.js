@@ -9,12 +9,10 @@ module.exports = {
       {
         framework: 'vue3',
         ts: false,
-        vueJsx: false,
       },
     ],
   ],
   plugins: [
-    ['@vue3-oop/babel-plugin-jsx', { enableObjectSlots: false }],
     [
       'import',
       {

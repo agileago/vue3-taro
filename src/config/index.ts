@@ -18,6 +18,6 @@ switch (process.env.MODE) {
     conf = deepMerge.withOptions(mergeOpt, defaultConf, productionConf)
     break
 }
-conf.env = process.env.MODE!
+conf.env = process.env.MODE
 
 export default conf

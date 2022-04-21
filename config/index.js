@@ -1,5 +1,4 @@
 const path = require('path')
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 
 // 模式 区分环境
 const mode = process.env.MODE || process.env.NODE_ENV || 'development'
@@ -21,6 +20,7 @@ const config = {
   outputRoot: `dist/${process.env.TARO_ENV}`,
   plugins: [
     '@tarojs/plugin-html',
+    '@vue3-oop/taro-plugin',
     'taro-plugin-tailwind',
   ],
   defineConstants: {
@@ -54,28 +54,6 @@ const config = {
         },
       },
     },
-    webpackChain: (chain) => {
-      // 增加ts原生编译
-      chain.merge({
-        module: {
-          rule: {
-            script: {
-              use: {
-                tsloader: {
-                  loader: 'ts-loader',
-                  options: {
-                    transpileOnly: true,
-                  },
-                  after: 'babelLoader',
-                },
-              },
-            },
-          },
-        },
-      })
-      // chain.plugin('forkTsCheckerPlugin')
-      //   .use(ForkTsCheckerWebpackPlugin)
-    },
   },
   h5: {
     publicPath: '/',
@@ -91,50 +69,6 @@ const config = {
           generateScopedName: '[local]--[hash:base64:5]',
         },
       },
-    },
-    webpackChain: (chain) => {
-      chain.merge({
-        module: {
-          rule: {
-            script: {
-              use: {
-                tsloader: {
-                  loader: 'ts-loader',
-                  options: {
-                    transpileOnly: true,
-                  },
-                  after: 'babelLoader',
-                },
-              },
-            },
-          },
-        },
-      })
-      if (process.env.NODE_ENV === 'development') {
-        chain.merge({
-          module: {
-            rule: {
-              script: {
-                use: {
-                  hotLoader: {
-                    loader: '@vue3-oop/jsx-hot-loader',
-                    after: 'tsloader',
-                  },
-                },
-              },
-            },
-          },
-        })
-      }
-      // chain.plugin('forkTsCheckerPlugin')
-      //   .use(ForkTsCheckerWebpackPlugin)
-      chain.plugin('htmlWebpackPlugin')
-        .tap(args => {
-          args[0].template = path.resolve(__dirname, '../public/index.html')
-          return args
-        })
-      // chain.plugin('analyzer')
-      //   .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin, [])
     },
   },
 }
