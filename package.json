@@ -60,7 +60,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "fork-ts-checker-webpack-plugin": "6",
-    "lint-staged": "^12.3.8",
+    "lint-staged": "^12.4.0",
     "prettier": "^2.6.2",
     "serve": "^13.0.2",
     "taro-plugin-tailwind": "^1.2.8",

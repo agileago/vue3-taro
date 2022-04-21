@@ -33,7 +33,7 @@ specifiers:
   eslint-plugin-prettier: ^4.0.0
   fork-ts-checker-webpack-plugin: '6'
   injection-js: ^2.4.0
-  lint-staged: ^12.3.8
+  lint-staged: ^12.4.0
   prettier: ^2.6.2
   serve: ^13.0.2
   taro-axios: ^1.1.1
@@ -91,7 +91,7 @@ devDependencies:
   eslint-config-prettier: 8.5.0_eslint@8.13.0
   eslint-plugin-prettier: 4.0.0_1815ac95b7fb26c13c7d48a8eef62d0f
   fork-ts-checker-webpack-plugin: 6.5.1_eslint@8.13.0+typescript@4.6.3
-  lint-staged: 12.3.8
+  lint-staged: 12.4.0
   prettier: 2.6.2
   serve: 13.0.2
   taro-plugin-tailwind: 1.2.8
@@ -9874,8 +9874,8 @@ packages:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
     dev: true
 
-  /lint-staged/12.3.8:
-    resolution: {integrity: sha512-0+UpNaqIwKRSGAFOCcpuYNIv/j5QGVC+xUVvmSdxHO+IfIGoHbFLo3XcPmV/LLnsVj5EAncNHVtlITSoY5qWGQ==}
+  /lint-staged/12.4.0:
+    resolution: {integrity: sha512-3X7MR0h9b7qf4iXf/1n7RlVAx+EzpAZXoCEMhVSpaBlgKDfH2ewf+QUm7BddFyq29v4dgPP+8+uYpWuSWx035A==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     hasBin: true
     dependencies:
