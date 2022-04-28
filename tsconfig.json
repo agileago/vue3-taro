@@ -21,7 +21,7 @@
     "rootDir": ".",
     "jsx": "preserve",
     "resolveJsonModule": true,
-    "types": ["@tarojs/taro", "webpack-env", "vite/client"],
+    "types": ["@tarojs/taro", "webpack-env", "vite/client", "@tarojs/components/vue3"],
     "paths": {
       "@/*": ["src/*"]
     }
