@@ -25,6 +25,7 @@ const config = {
   plugins: [
     '@tarojs/plugin-html',
     '@vue3-oop/taro-plugin',
+    '@tarojs/plugin-mock',
   ],
   copy: {
     patterns: [
