@@ -51,7 +51,7 @@ export function interceptRequest(
   }
   option = option || {}
   const requestOption: AxiosRequestConfig = {
-    method: option.method || 'get',
+    method: (option.method || 'get') as AxiosRequestConfig['method'],
   }
   if (option.header) {
     requestOption.headers = option.header

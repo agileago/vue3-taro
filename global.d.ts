@@ -5,15 +5,15 @@ declare namespace __WebpackModuleApi  {
   interface NodeProcess {
     env: {
       NODE_ENV: 'development' | 'production'
-      MODE: string
-      DEV: boolean
-      PROD: boolean
-      BASE_URL: string
       TARO_ENV: 'weapp' | 'swan' | 'alipay' | 'h5' | 'rn' | 'tt' | 'quickapp' | 'qq' | 'jd'
+      VUE_APP_MODE: string
+      BASE_URL: string
+      VUE_APP_BASE_ROUTE: string
+      VUE_APP_BASE_URL: string
     }
   }
 }
 
-declare module '@tarojs/components' {
-  export * from '@tarojs/components/types/index.vue3'
-}
+// declare module '@tarojs/components' {
+//   export * from '@tarojs/components/types/index.vue3'
+// }

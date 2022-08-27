@@ -1,5 +1,5 @@
 {
-  "miniprogramRoot": "./dist/weapp",
+  "miniprogramRoot": "./dist",
   "projectname": "WechatAppDemo",
   "description": "WechatAppDemo",
   "appid": "wx3f627368f76b01c7",

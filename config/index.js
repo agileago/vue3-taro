@@ -1,8 +1,5 @@
-const path = require('path')
-
-// 模式 区分环境
-const mode = process.env.MODE || process.env.NODE_ENV || 'development'
-
+import { loadEnv } from '@vue3-oop/taro-plugin'
+const env = loadEnv()
 /**
  *
  * @type {import('@tarojs/taro/types/compile').IProjectConfig}
@@ -10,27 +7,37 @@ const mode = process.env.MODE || process.env.NODE_ENV || 'development'
 const config = {
   projectName: 'vue3taro',
   framework: 'vue3',
-  env: {
-    NODE_ENV: JSON.stringify(process.env.NODE_ENV)
-  },
-  alias: {
-    '@': path.resolve(__dirname, '..', 'src'),
+  designWidth: 375,
+  deviceRatio: {
+    640: 2.34 / 2,
+    750: 1,
+    828: 1.81 / 2,
+    375: 2 / 1,
   },
   sourceRoot: 'src',
-  outputRoot: `dist/${process.env.TARO_ENV}`,
+  outputRoot: `dist`,
+  compiler: {
+    type: 'webpack5',
+    prebundle: {
+      include: ['vue'],
+    },
+  },
   plugins: [
     '@tarojs/plugin-html',
     '@vue3-oop/taro-plugin',
-    'taro-plugin-tailwind',
   ],
-  defineConstants: {
-    'process.env.MODE': JSON.stringify(mode),
-  },
   copy: {
-    patterns: [],
-    options: {},
+    patterns: [
+      {
+        from: 'public/',
+        to: 'dist/',
+        ignore: ['**/index.html'],
+      },
+    ],
   },
-  framework: 'vue3',
+  sass: {
+    data: '@import "@nutui/nutui-taro/dist/styles/variables.scss";',
+  },
   mini: {
     postcss: {
       pxtransform: {
@@ -56,7 +63,12 @@ const config = {
     },
   },
   h5: {
-    publicPath: '/',
+    publicPath: process.env.VUE_APP_BASE_URL,
+    router: {
+      basename: process.env.VUE_APP_BASE_ROUTE.replace(/\/$/, ''),
+      mode: 'browser',
+    },
+    esnextModules: ['nutui-taro'],
     staticDirectory: 'static',
     postcss: {
       pxtransform: {
@@ -70,6 +82,9 @@ const config = {
         },
       },
     },
+    devServer: {
+      open: false
+    }
   },
 }
 module.exports = () => config
