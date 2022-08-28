@@ -1,8 +1,8 @@
 export default defineAppConfig({
-  pages: ['pages/index/index', 'pages/sub/count/index'],
+  pages: ['module/demo/first/index'],
   window: {
     navigationBarBackgroundColor: '#fff',
-    navigationBarTitleText: 'WeChat',
+    navigationBarTitleText: '小程序Taro',
     navigationBarTextStyle: 'black',
   },
   subpackages: [],

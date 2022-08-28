@@ -2,6 +2,8 @@ import type { AxiosInstance, AxiosRequestConfig } from 'taro-axios'
 import axios from 'taro-axios'
 import * as pathToRegexp from 'path-to-regexp'
 import type { RequestParameter } from 'ts-gear'
+import taroAdapter from '@vue3-oop/taro-axios-adapter'
+import config from '@/config'
 
 // region 基础方法 基本不需要动
 interface ReturnMessageArg {
@@ -85,24 +87,10 @@ export const createRequester = (ax: AxiosInstance) => {
 }
 // endregion
 
-// 扩展axios配置里面的自定义字段
-declare module 'taro-axios' {
-  interface AxiosRequestConfig {
-    /**
-     * 签名
-     */
-    nosign?: boolean
-
-    /**
-     * 身份校验
-     */
-    notoken?: boolean
-  }
-}
-
 // 自定义
-export const customRequest = axios.create({
-  baseURL: process.env.NODE_ENV === 'development' ? '/api' : '',
+export const httpRequest = axios.create({
+  baseURL: config.API,
+  adapter: taroAdapter,
 })
 
-export const custom = createRequester(customRequest)
+export const http = createRequester(httpRequest)

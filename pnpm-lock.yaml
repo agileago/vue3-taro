@@ -27,8 +27,11 @@ specifiers:
   '@typescript-eslint/parser': ^5.35.1
   '@vue/babel-plugin-jsx': ^1.0.6
   '@vue/compiler-sfc': ^3.2.37
+  '@vue3-oop/taro-axios-adapter': ^1.0.1
+  '@vue3-oop/taro-hooks': ^1.0.1
   '@vue3-oop/taro-plugin': ^1.0.2
   autoprefixer: ^10.4.8
+  axios: ^0.27.2
   babel-plugin-import: ^1.13.3
   babel-preset-taro: 3.5.4
   cross-env: ^7.0.3
@@ -72,6 +75,9 @@ dependencies:
   '@tarojs/shared': 3.5.4
   '@tarojs/taro': 3.5.4_vue@3.2.37
   '@tarojs/taro-h5': 3.5.4_vue@3.2.37
+  '@vue3-oop/taro-axios-adapter': 1.0.1_@tarojs+taro@3.5.4
+  '@vue3-oop/taro-hooks': 1.0.1_yymtb37ix5dvrwy5cmagga6c5m
+  axios: 0.27.2
   injection-js: 2.4.0
   path-to-regexp: 6.2.1
   taro-axios: 1.1.1_@tarojs+taro@3.5.4
@@ -3141,6 +3147,24 @@ packages:
       - supports-color
     dev: true
 
+  /@vue3-oop/taro-axios-adapter/1.0.1_@tarojs+taro@3.5.4:
+    resolution: {integrity: sha512-i4C+NmkzKdCwFszqb/2m5AhJB2EWO+JXV1Daqy0y/8fRbAx/MS6z3lTDQL/njP9Ac852xHKUx6MxWggMTuOxJA==}
+    peerDependencies:
+      '@tarojs/taro': ^3.5.4
+    dependencies:
+      '@tarojs/taro': 3.5.4_vue@3.2.37
+    dev: false
+
+  /@vue3-oop/taro-hooks/1.0.1_yymtb37ix5dvrwy5cmagga6c5m:
+    resolution: {integrity: sha512-Vy+OqcLZUJR7t3zXgCfMggqKfi3iAd1hwrw38WIjwlaOEeAQbJ5IaL3NCnQzxzNpuR4hJ0U5Oe8cni/ZGVAqmQ==}
+    peerDependencies:
+      '@tarojs/taro': ^3.5.4
+      vue3-oop: ^1.0.0
+    dependencies:
+      '@tarojs/taro': 3.5.4_vue@3.2.37
+      vue3-oop: 1.0.0_xf7dpda7cjdslta5qpkgfwsgge
+    dev: false
+
   /@vue3-oop/taro-plugin/1.0.2_frxmcuunqqqeqipt45cd6rjuvu:
     resolution: {integrity: sha512-le7I9ne5E3CUexphQFMm7665NEpbVH2zImanSWl0N6/TfCEknjylrI8OAcD7vQ6BBNkGb5EGy/xxNXV/hY5oZQ==}
     peerDependencies:
@@ -3700,7 +3724,6 @@ packages:
 
   /asynckit/0.4.0:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
-    dev: true
 
   /atob/2.1.2:
     resolution: {integrity: sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==}
@@ -3752,6 +3775,15 @@ packages:
       follow-redirects: 1.5.10
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /axios/0.27.2:
+    resolution: {integrity: sha512-t+yRIyySRTp/wua5xEr+z1q60QmLq8ABsS5O9Me1AsE5dfKqgnCFzwiCZZ/cGNd1lq4/7akDWMxdhVlucjmnOQ==}
+    dependencies:
+      follow-redirects: 1.15.1
+      form-data: 4.0.0
+    transitivePeerDependencies:
+      - debug
     dev: false
 
   /babel-code-frame/6.26.0:
@@ -4921,7 +4953,6 @@ packages:
     engines: {node: '>= 0.8'}
     dependencies:
       delayed-stream: 1.0.0
-    dev: true
 
   /commander/2.15.1:
     resolution: {integrity: sha512-VlfT9F3V0v+jr4yxPc5gg9s62/fIVWsd2Bk2iD435um1NlGMYdVCq+MjcXnhYq2icNOizHr1kK+5TI6H0Hy0ag==}
@@ -5788,7 +5819,6 @@ packages:
   /delayed-stream/1.0.0:
     resolution: {integrity: sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==}
     engines: {node: '>=0.4.0'}
-    dev: true
 
   /depcheck/0.8.3:
     resolution: {integrity: sha512-xcLTnaovCFFTts5Ge7mUUhMGHSu6eRfftvVvOjN7gXO5EFUhJfX6UQa1b08a0SIwKfzG9eKNn5mzZlXp0mZARA==}
@@ -7299,7 +7329,6 @@ packages:
     peerDependenciesMeta:
       debug:
         optional: true
-    dev: true
 
   /follow-redirects/1.5.10:
     resolution: {integrity: sha512-0V5l4Cizzvqt5D44aTXbFZz+FtyXV1vrDN6qrelxtfYQKW0KO0W2T/hkE8xvGa/540LkZlkaUjO4ailYTFtHVQ==}
@@ -7354,6 +7383,15 @@ packages:
       combined-stream: 1.0.8
       mime-types: 2.1.35
     dev: true
+
+  /form-data/4.0.0:
+    resolution: {integrity: sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww==}
+    engines: {node: '>= 6'}
+    dependencies:
+      asynckit: 0.4.0
+      combined-stream: 1.0.8
+      mime-types: 2.1.35
+    dev: false
 
   /forwarded/0.2.0:
     resolution: {integrity: sha512-buRG0fpBtRHSTCOASe6hD258tEubFoRLb4ZNA6NxMVHNw2gOcwHo9wyablzMzOA5z9xA9L1KNjk/Nt6MT9aYow==}
@@ -9678,7 +9716,6 @@ packages:
   /mime-db/1.52.0:
     resolution: {integrity: sha512-sPU4uV7dYlvtWJxwwxHD0PuihVNiE7TyAbQ5SWxDCB9mUYvOgroQOwYQQOKPJ8CIbE+1ETVlOoK1UC2nU3gYvg==}
     engines: {node: '>= 0.6'}
-    dev: true
 
   /mime-types/2.1.18:
     resolution: {integrity: sha512-lc/aahn+t4/SWV/qcmumYjymLsWfN3ELhpmVuUFjgsORruuZPVSwAQryq+HHGvO/SI2KVX26bx+En+zhM8g8hQ==}
@@ -9692,7 +9729,6 @@ packages:
     engines: {node: '>= 0.6'}
     dependencies:
       mime-db: 1.52.0
-    dev: true
 
   /mime/1.6.0:
     resolution: {integrity: sha512-x0Vn8spI+wuJ1O6S7gnbaQg8Pxh4NNHb7KSINmEWKiPE4RKOplvijn+NkmYmmRgP68mc70j2EbeTFRsrswaQeg==}

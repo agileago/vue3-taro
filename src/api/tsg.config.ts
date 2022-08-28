@@ -12,6 +12,7 @@ const projects: Project[] = [
     dest: '../api',
     source: 'http://localhost:8080/swagger-json',
     keepGeneric: false,
+    shouldForceSkipRequestHeaderOption: true,
     shouldExportRequestOptionType: false,
     shouldExportResponseType: false,
     importRequesterStatement: `import { lowcode, AxiosRequestConfig } from "../http"`,

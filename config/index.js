@@ -1,4 +1,5 @@
-import { loadEnv } from '@vue3-oop/taro-plugin'
+import { loadEnv } from "@vue3-oop/taro-plugin";
+
 const env = loadEnv()
 /**
  *
@@ -40,6 +41,9 @@ const config = {
     data: '@import "@nutui/nutui-taro/dist/styles/variables.scss";',
   },
   mini: {
+    optimizeMainPackage: {
+      enable: true,
+    },
     postcss: {
       pxtransform: {
         enable: false,
