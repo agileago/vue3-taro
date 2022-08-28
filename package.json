@@ -9,6 +9,7 @@
     "css": "sass"
   },
   "scripts": {
+    "postinstall": "simple-git-hooks",
     "dev": "pnpm run build --watch",
     "build": "taro build --type weapp",
     "develop": "pnpm run build --mode develop",
@@ -47,7 +48,6 @@
     "@babel/core": "^7.18.13",
     "@commitlint/cli": "^17.1.1",
     "@commitlint/config-conventional": "^17.1.0",
-    "@nexhome/yorkie": "^2.0.8",
     "@tarojs/cli": "3.5.4",
     "@tarojs/plugin-mock": "^0.0.9",
     "@tarojs/webpack5-runner": "3.5.4",
@@ -72,6 +72,7 @@
     "postcss": "^8.4.16",
     "prettier": "^2.6.2",
     "serve": "^14.0.1",
+    "simple-git-hooks": "^2.8.0",
     "style-loader": "3.3.1",
     "ts-gear": "^4.7.3",
     "ts-node": "^10.9.1",
@@ -85,9 +86,9 @@
       "@commitlint/config-conventional"
     ]
   },
-  "gitHooks": {
-    "pre-commit": "lint-staged",
-    "commit-msg": "commitlint -E GIT_PARAMS"
+  "simple-git-hooks": {
+    "pre-commit": "pnpm exec lint-staged",
+    "commit-msg": "pnpm exec commitlint -e \"$@\""
   },
   "lint-staged": {
     "*.{ts,tsx}": [
