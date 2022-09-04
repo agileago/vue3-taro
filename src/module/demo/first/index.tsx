@@ -9,6 +9,10 @@ export default class First extends VueComponent {
   }
 
   render() {
-    return <Button>first</Button>
+    return (
+      <Button type={'primary'} block>
+        first
+      </Button>
+    )
   }
 }

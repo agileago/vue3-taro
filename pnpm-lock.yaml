@@ -48,7 +48,6 @@ specifiers:
   serve: ^14.0.1
   simple-git-hooks: ^2.8.0
   style-loader: 3.3.1
-  taro-axios: ^1.1.1
   ts-essentials: ^9.3.0
   ts-gear: ^4.7.3
   ts-node: ^10.9.1
@@ -79,7 +78,6 @@ dependencies:
   axios: 0.27.2
   injection-js: 2.4.0
   path-to-regexp: 6.2.1
-  taro-axios: 1.1.1_@tarojs+taro@3.5.4
   ts-essentials: 9.3.0_typescript@4.8.2
   tslib: 2.4.0
   vue: 3.2.37
@@ -3744,15 +3742,6 @@ packages:
     resolution: {integrity: sha512-xh1Rl34h6Fi1DC2WWKfxUTVqRsNnr6LsKz2+hfwDxQJWmrx8+c7ylaqBMcHfl1U1r2dsifOvKX3LQuLNZ+XSvA==}
     dev: true
 
-  /axios/0.19.2:
-    resolution: {integrity: sha512-fjgm5MvRHLhx+osE2xoekY70AhARk3a6hkN+3Io1jc00jtquGvxYlKlsFUhmUET0V5te6CcZI7lcv2Ym61mjHA==}
-    deprecated: Critical security vulnerability fixed in v0.21.1. For more information, see https://github.com/axios/axios/pull/3410
-    dependencies:
-      follow-redirects: 1.5.10
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
-
   /axios/0.27.2:
     resolution: {integrity: sha512-t+yRIyySRTp/wua5xEr+z1q60QmLq8ABsS5O9Me1AsE5dfKqgnCFzwiCZZ/cGNd1lq4/7akDWMxdhVlucjmnOQ==}
     dependencies:
@@ -7278,15 +7267,6 @@ packages:
     peerDependenciesMeta:
       debug:
         optional: true
-
-  /follow-redirects/1.5.10:
-    resolution: {integrity: sha512-0V5l4Cizzvqt5D44aTXbFZz+FtyXV1vrDN6qrelxtfYQKW0KO0W2T/hkE8xvGa/540LkZlkaUjO4ailYTFtHVQ==}
-    engines: {node: '>=4.0'}
-    dependencies:
-      debug: 3.1.0
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
 
   /for-in/1.0.2:
     resolution: {integrity: sha512-7EwmXrOjyL+ChxMhmG5lnW9MPt1aIeZEwKhQzoBUdTV0N3zuwWDZYVJatDvZ2OyzPUvdIAZDsCetk3coyMfcnQ==}
@@ -12825,17 +12805,6 @@ packages:
       to-buffer: 1.1.1
       xtend: 4.0.2
     dev: true
-
-  /taro-axios/1.1.1_@tarojs+taro@3.5.4:
-    resolution: {integrity: sha512-Ahbxef5w6uy6wiJkooOxQbEeiqyE5vt/ikUe/bPDDhguZ7NjDSeGlNqvzLW+3lyT8ZFV+s5oqMI2EZ5c2Edwgg==}
-    peerDependencies:
-      '@tarojs/taro': ^3
-    dependencies:
-      '@tarojs/taro': 3.5.4_vue@3.2.37
-      axios: 0.19.2
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
 
   /taro-css-to-react-native/3.5.4:
     resolution: {integrity: sha512-H4xt4/74YLubUoM14fSxNbTR/zybEwWL5osNDxw4gnV6JGL1yBD1hiz4HWFgiSOhrjpThdKZehlFCctilpsgdQ==}

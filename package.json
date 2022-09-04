@@ -9,7 +9,6 @@
     "css": "sass"
   },
   "scripts": {
-    "postinstall": "simple-git-hooks",
     "dev": "pnpm run build --watch",
     "build": "taro build --type weapp",
     "develop": "pnpm run build --mode develop",
@@ -17,7 +16,8 @@
     "build:h5": "taro build --type h5",
     "preview:h5": "serve -s dist",
     "type:check": "tsc --noEmit",
-    "lint": "eslint --fix ."
+    "lint": "eslint --fix .",
+    "postinstall": "simple-git-hooks"
   },
   "dependencies": {
     "@abraham/reflection": "^0.10.0",
@@ -38,7 +38,6 @@
     "axios": "^0.27.2",
     "injection-js": "^2.4.0",
     "path-to-regexp": "^6.2.1",
-    "taro-axios": "^1.1.1",
     "ts-essentials": "^9.3.0",
     "tslib": "^2.4.0",
     "vue": "^3.2.37",
@@ -92,8 +91,7 @@
   },
   "lint-staged": {
     "*.{ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
+      "eslint --fix"
     ],
     "*.{css,scss,html,json}": [
       "prettier --write"

@@ -1,5 +1,5 @@
-import type { AxiosInstance, AxiosRequestConfig } from 'taro-axios'
-import axios from 'taro-axios'
+import type { AxiosInstance, AxiosRequestConfig } from 'axios'
+import axios from 'axios'
 import * as pathToRegexp from 'path-to-regexp'
 import type { RequestParameter } from 'ts-gear'
 import taroAdapter from '@vue3-oop/taro-axios-adapter'

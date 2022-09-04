@@ -31,5 +31,6 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'off',
     'no-debugger': 'warn',
     'no-case-declarations': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
   },
 }
