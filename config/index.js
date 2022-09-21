@@ -19,9 +19,6 @@ const config = {
   outputRoot: `dist`,
   compiler: {
     type: 'webpack5',
-    prebundle: {
-      include: ['vue'],
-    },
   },
   plugins: [
     '@tarojs/plugin-html',

@@ -14,6 +14,6 @@ declare namespace __WebpackModuleApi  {
   }
 }
 
-// declare module '@tarojs/components' {
-//   export * from '@tarojs/components/types/index.vue3'
-// }
+declare module '@tarojs/components' {
+  export * from '@tarojs/components/types/index.vue3'
+}
