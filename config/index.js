@@ -1,6 +1,9 @@
 import { loadEnv } from "@vue3-oop/taro-plugin";
 
+const { TaroWeappTailwindcssWebpackPluginV5 } = require('weapp-tailwindcss-webpack-plugin')
+
 const env = loadEnv()
+const isH5 = process.env.TARO_ENV === 'h5'
 /**
  *
  * @type {import('@tarojs/taro/types/compile').IProjectConfig}
@@ -10,16 +13,11 @@ const config = {
   framework: 'vue3',
   designWidth: 375,
   deviceRatio: {
-    640: 2.34 / 2,
-    750: 1,
-    828: 1.81 / 2,
     375: 2 / 1,
   },
   sourceRoot: 'src',
   outputRoot: `dist`,
-  compiler: {
-    type: 'webpack5',
-  },
+  compiler: 'webpack5',
   plugins: [
     '@tarojs/plugin-html',
     '@vue3-oop/taro-plugin',
@@ -43,7 +41,8 @@ const config = {
     },
     postcss: {
       pxtransform: {
-        enable: false,
+        enable: true,
+        config: {},
       },
       autoprefixer: {
         enable: true,
@@ -63,6 +62,21 @@ const config = {
         },
       },
     },
+    webpackChain(chain, webpack) {
+      chain.merge({
+        plugin: {
+          install: {
+            plugin: TaroWeappTailwindcssWebpackPluginV5,
+            args: [
+              {
+                // 注意这一行(不传默认 react)
+                framework: 'vue3' // 'vue2' / 'vue3'
+              }
+            ]
+          }
+        }
+      })
+    }
   },
   h5: {
     publicPath: process.env.VUE_APP_BASE_URL,
@@ -74,19 +88,25 @@ const config = {
     staticDirectory: 'static',
     postcss: {
       pxtransform: {
-        enable: false,
+        enable: true,
+        config: {},
+      },
+      autoprefixer: {
+        enable: true,
+        config: {},
       },
       cssModules: {
         enable: true,
         config: {
           namingPattern: 'module',
+          localsConvention: 'camelCaseOnly',
           generateScopedName: '[local]--[hash:base64:5]',
         },
       },
     },
     devServer: {
-      open: false
-    }
+      open: false,
+    },
   },
 }
 module.exports = () => config

@@ -10,11 +10,12 @@ export default class First extends VueComponent {
 
   render() {
     return (
-      <>
-        <Button type={'primary'} block>
+      <div class={'text-amber-300'}>
+        <div class={'text-center text-[50px] text-red-400 mt-[22px]'}>aaa</div>
+        <Button type={'primary'} block class={'text-xl'} size={''}>
           first
         </Button>
-      </>
+      </div>
     )
   }
 }
