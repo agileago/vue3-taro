@@ -1,6 +1,5 @@
 import { loadEnv } from "@vue3-oop/taro-plugin";
-
-const { TaroWeappTailwindcssWebpackPluginV5 } = require('weapp-tailwindcss-webpack-plugin')
+import { TaroWeappTailwindcssWebpackPluginV5 } from "weapp-tailwindcss-webpack-plugin";
 
 const env = loadEnv()
 const isH5 = process.env.TARO_ENV === 'h5'
@@ -18,19 +17,17 @@ const config = {
   sourceRoot: 'src',
   outputRoot: `dist`,
   compiler: 'webpack5',
-  plugins: [
-    '@tarojs/plugin-html',
-    '@vue3-oop/taro-plugin',
-    '@tarojs/plugin-mock',
-  ],
+  plugins: ['@tarojs/plugin-html', '@vue3-oop/taro-plugin', '@tarojs/plugin-mock'],
   copy: {
-    patterns: [
-      {
-        from: 'public/',
-        to: 'dist/',
-        ignore: ['**/index.html'],
-      },
-    ],
+    patterns: isH5
+      ? [
+          {
+            from: 'public/',
+            to: 'dist/',
+            ignore: ['**/index.html'],
+          },
+        ]
+      : [],
   },
   sass: {
     data: '@import "@nutui/nutui-taro/dist/styles/variables.scss";',
@@ -70,13 +67,13 @@ const config = {
             args: [
               {
                 // 注意这一行(不传默认 react)
-                framework: 'vue3' // 'vue2' / 'vue3'
-              }
-            ]
-          }
-        }
+                framework: 'vue3', // 'vue2' / 'vue3'
+              },
+            ],
+          },
+        },
       })
-    }
+    },
   },
   h5: {
     publicPath: process.env.VUE_APP_BASE_URL,
