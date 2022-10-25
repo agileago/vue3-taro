@@ -1,17 +1,18 @@
 import { VueComponent } from 'vue3-oop'
 import { Button } from '@nutui/nutui-taro'
 import { MiniHook } from '@vue3-oop/taro-hooks'
+import { http } from '@/api/http'
 
 export default class First extends VueComponent {
   @MiniHook('Load')
   load() {
-    console.log(1111111111)
+    http('/abc', { method: 'get' }).then(res => console.log('res', res))
   }
 
   render() {
     return (
       <div class={'text-amber-300'}>
-        <div class={'text-center text-[50px] text-red-400 mt-[22px]'}>aaa</div>
+        <div class={'mt-[22px] text-center text-[50px] text-red-400'}>aaa</div>
         <Button type={'primary'} block class={'text-xl'}>
           first
         </Button>

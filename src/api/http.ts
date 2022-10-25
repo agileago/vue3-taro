@@ -61,13 +61,6 @@ export function interceptRequest(
   if (option.body) {
     requestOption.data = option.body
   }
-  if (option.formData) {
-    const formData = new FormData()
-    Object.keys(option.formData).forEach(k => {
-      formData.append(k, option?.formData[k])
-    })
-    requestOption.data = formData
-  }
   if (option.query) {
     requestOption.params = option.query
   }
@@ -78,7 +71,7 @@ export function interceptRequest(
  * @param ax
  */
 export const createRequester = (ax: AxiosInstance) => {
-  return <T>(apiUrl: string, param: RequestParameter, config: AxiosRequestConfig = {}) => {
+  return function <T>(apiUrl: string, param: RequestParameter, config: AxiosRequestConfig = {}) {
     // eslint-disable-next-line prefer-const
     let [url, option] = interceptRequest(apiUrl, param)
     option = { url, ...option, ...config }

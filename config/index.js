@@ -3,6 +3,7 @@ import { TaroWeappTailwindcssWebpackPluginV5 } from "weapp-tailwindcss-webpack-p
 
 const env = loadEnv()
 const isH5 = process.env.TARO_ENV === 'h5'
+const isWatch = process.env.VUE_APP_WATCH === 'true'
 /**
  *
  * @type {import('@tarojs/taro/types/compile').IProjectConfig}
@@ -17,17 +18,21 @@ const config = {
   sourceRoot: 'src',
   outputRoot: `dist`,
   compiler: 'webpack5',
-  plugins: ['@tarojs/plugin-html', '@vue3-oop/taro-plugin', '@tarojs/plugin-mock'],
+  plugins: [
+    '@tarojs/plugin-html',
+    '@vue3-oop/taro-plugin',
+    isWatch ? '@tarojs/plugin-mock' : undefined,
+  ].filter(Boolean),
   copy: {
-    patterns: isH5
-      ? [
-          {
+    patterns: [
+      isH5
+        ? {
             from: 'public/',
             to: 'dist/',
             ignore: ['**/index.html'],
-          },
-        ]
-      : [],
+          }
+        : undefined,
+    ].filter(Boolean),
   },
   sass: {
     data: '@import "@nutui/nutui-taro/dist/styles/variables.scss";',
@@ -38,10 +43,6 @@ const config = {
     },
     postcss: {
       pxtransform: {
-        enable: true,
-        config: {},
-      },
-      autoprefixer: {
         enable: true,
         config: {},
       },
@@ -85,10 +86,6 @@ const config = {
     staticDirectory: 'static',
     postcss: {
       pxtransform: {
-        enable: true,
-        config: {},
-      },
-      autoprefixer: {
         enable: true,
         config: {},
       },
