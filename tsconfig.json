@@ -2,11 +2,13 @@
   "compilerOptions": {
     "target": "ES2021",
     "module": "ESNext",
+    "strict": true,
     "preserveConstEnums": true,
     "moduleResolution": "node",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "useDefineForClassFields": false,
+    "isolatedModules": true,
     "preserveValueImports": true,
     "importsNotUsedAsValues": "error",
     "skipLibCheck": true,
