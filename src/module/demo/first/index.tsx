@@ -1,12 +1,12 @@
 import { VueComponent } from 'vue3-oop'
 import { Button } from '@nutui/nutui-taro'
 import { MiniHook } from '@vue3-oop/taro-hooks'
-import { http } from '@/api/http'
+import { abcRequest } from '@/api/http'
 
 export default class First extends VueComponent {
   @MiniHook('Load')
   load() {
-    http('/abc', { method: 'get' }).then(res => console.log('res', res))
+    abcRequest('/abc', { method: 'get' }).then(res => console.log('res', res))
   }
 
   render() {

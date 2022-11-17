@@ -2,24 +2,13 @@ import type { AxiosInstance, AxiosRequestConfig } from 'axios'
 import axios from 'axios'
 import * as pathToRegexp from 'path-to-regexp'
 import type { RequestParameter } from 'ts-gear'
-import taroAdapter from '@vue3-oop/taro-axios-adapter'
 import config from '@/config'
+import taroAdapter from '@vue3-oop/taro-axios-adapter'
 
 // region 基础方法 基本不需要动
-interface ReturnMessageArg {
-  /**
-   * 状态值  1为正常  0为失败  -1未经过验证
-   * format: int32
-   */
-  code?: number
-  /** 错误信息 */
-  msg?: string | null
-  /** 返回数据 */
-  entity?: any
-  /** 描述信息 */
-  data?: any | null
-}
-type ReturnEntityType<T> = T extends ReturnMessageArg ? T['entity'] : T
+
+// 此类型主要用于简化响应类型
+type ReturnEntityType<T> = T
 export type { AxiosRequestConfig }
 /**
  * 解析url中的参数  /abc/:id 替换id
@@ -53,13 +42,20 @@ export function interceptRequest(
   }
   option = option || {}
   const requestOption: AxiosRequestConfig = {
-    method: (option.method || 'get') as AxiosRequestConfig['method'],
+    method: option.method || 'get',
   }
   if (option.header) {
     requestOption.headers = option.header
   }
   if (option.body) {
     requestOption.data = option.body
+  }
+  if (option.formData) {
+    const formData = new FormData()
+    Object.keys(option.formData).forEach(k => {
+      formData.append(k, option?.formData[k])
+    })
+    requestOption.data = formData
   }
   if (option.query) {
     requestOption.params = option.query
@@ -75,15 +71,15 @@ export const createRequester = (ax: AxiosInstance) => {
     // eslint-disable-next-line prefer-const
     let [url, option] = interceptRequest(apiUrl, param)
     option = { url, ...option, ...config }
-    return ax!.request<T>(option) as unknown as Promise<ReturnEntityType<T>>
+    return ax.request<T>(option) as unknown as Promise<ReturnEntityType<T>>
   }
 }
 // endregion
 
-// 自定义
-export const httpRequest = axios.create({
+// 创建request 对request进行拦截各种操作
+export const abcRequest = axios.create({
   baseURL: config.API,
   adapter: taroAdapter,
 })
 
-export const http = createRequester(httpRequest)
+export const abcRequester = createRequester(abcRequest)
