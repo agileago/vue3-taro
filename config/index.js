@@ -1,5 +1,5 @@
-import { loadEnv } from "@vue3-oop/taro-plugin";
-import { TaroWeappTailwindcssWebpackPluginV5 } from "weapp-tailwindcss-webpack-plugin";
+import { loadEnv } from '@vue3-oop/taro-plugin'
+import { TaroWeappTailwindcssWebpackPluginV5 } from 'weapp-tailwindcss-webpack-plugin'
 
 const env = loadEnv()
 const isH5 = process.env.TARO_ENV === 'h5'
@@ -21,6 +21,7 @@ const config = {
   plugins: [
     '@tarojs/plugin-html',
     '@vue3-oop/taro-plugin',
+    '@taro-platform/axios-taro-adapter/taro-plugin',
     isWatch ? '@tarojs/plugin-mock' : undefined,
   ].filter(Boolean),
   copy: {

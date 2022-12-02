@@ -3,7 +3,15 @@ import axios from 'axios'
 import * as pathToRegexp from 'path-to-regexp'
 import type { RequestParameter } from 'ts-gear'
 import config from '@/config'
-import taroAdapter from '@vue3-oop/taro-axios-adapter'
+
+import MpAdapter, { defaultTransformRequest } from '@taro-platform/axios-taro-adapter'
+
+if (process.env.TARO_ENV !== 'h5') {
+  // 让小程序适配器发挥作用
+  axios.defaults.adapter = MpAdapter
+  // 设置默认请求转换器
+  axios.defaults.transformRequest = defaultTransformRequest
+}
 
 // region 基础方法 基本不需要动
 
@@ -79,7 +87,6 @@ export const createRequester = (ax: AxiosInstance) => {
 // 创建request 对request进行拦截各种操作
 export const abcRequest = axios.create({
   baseURL: config.API,
-  adapter: taroAdapter,
 })
 
 export const abcRequester = createRequester(abcRequest)

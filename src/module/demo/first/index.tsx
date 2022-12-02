@@ -6,7 +6,7 @@ import { abcRequest } from '@/api/http'
 export default class First extends VueComponent {
   @MiniHook('Load')
   load() {
-    abcRequest('/abc', { method: 'get' }).then(res => console.log('res', res))
+    abcRequest('/abc', { method: 'get', params: { a: 1 } }).then(res => console.log('res', res))
   }
 
   render() {
@@ -16,6 +16,7 @@ export default class First extends VueComponent {
         <Button type={'primary'} block class={'text-xl'}>
           first
         </Button>
+        <view key={1}></view>
       </div>
     )
   }
