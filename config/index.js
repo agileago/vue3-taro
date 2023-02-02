@@ -89,6 +89,7 @@ const config = {
       mode: 'browser',
     },
     staticDirectory: 'static',
+    esnextModules: ['nutui-taro', 'icons-vue-taro'],
     postcss: {
       pxtransform: {
         enable: true,
