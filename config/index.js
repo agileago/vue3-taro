@@ -17,11 +17,16 @@ const config = {
   },
   sourceRoot: 'src',
   outputRoot: `dist`,
-  compiler: 'webpack5',
+  compiler: {
+    type: 'webpack5',
+    prebundle: {
+      exclude: ['@nutui/nutui-taro'],
+    },
+  },
   plugins: [
     '@tarojs/plugin-html',
+    '@tarojs/plugin-http',
     '@vue3-oop/taro-plugin',
-    '@taro-platform/axios-taro-adapter/taro-plugin',
     isWatch ? '@tarojs/plugin-mock' : undefined,
   ].filter(Boolean),
   copy: {
@@ -83,7 +88,6 @@ const config = {
       basename: process.env.VUE_APP_BASE_ROUTE.replace(/\/$/, ''),
       mode: 'browser',
     },
-    esnextModules: ['nutui-taro'],
     staticDirectory: 'static',
     postcss: {
       pxtransform: {
