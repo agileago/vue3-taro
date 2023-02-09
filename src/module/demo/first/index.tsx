@@ -5,6 +5,7 @@ import { abcRequest } from '@/api/http'
 import Taro from '@tarojs/taro'
 
 export default class First extends VueComponent {
+  router = Taro.useRouter()
   @MiniHook('Load')
   load() {
     abcRequest('/abc', { method: 'get', params: { a: 1 } }).then(res => console.log('res', res))

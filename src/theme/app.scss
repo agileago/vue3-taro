@@ -1,5 +1,6 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/utilities';
+
 page,
 body {
   box-sizing: border-box;
@@ -10,4 +11,8 @@ body {
   /* prettier-ignore */
   max-width: 750PX;
   margin: 0 auto;
+}
+
+:root {
+  --nut-button-primary-color: rgb(76, 173, 76);
 }
