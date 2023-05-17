@@ -1,5 +1,5 @@
 import { loadEnv } from '@vue3-oop/taro-plugin'
-import { TaroWeappTailwindcssWebpackPluginV5 } from 'weapp-tailwindcss-webpack-plugin'
+import { UnifiedWebpackPluginV5 } from 'weapp-tailwindcss-webpack-plugin'
 
 const env = loadEnv()
 const isH5 = process.env.TARO_ENV === 'h5'
@@ -20,7 +20,7 @@ const config = {
   compiler: {
     type: 'webpack5',
     prebundle: {
-      exclude: ['@nutui/nutui-taro'],
+      enable: false,
     },
   },
   plugins: [
@@ -70,9 +70,10 @@ const config = {
       chain.merge({
         plugin: {
           install: {
-            plugin: TaroWeappTailwindcssWebpackPluginV5,
+            plugin: UnifiedWebpackPluginV5,
             args: [
               {
+                appType: 'taro',
                 // 注意这一行(不传默认 react)
                 framework: 'vue3', // 'vue2' / 'vue3'
               },

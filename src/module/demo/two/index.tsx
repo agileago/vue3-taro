@@ -1,13 +1,8 @@
 import { VueComponent } from 'vue3-oop'
-import { Button } from '@nutui/nutui-taro'
+import { WebView } from '@tarojs/components'
 
 export default class Two extends VueComponent {
   render() {
-    return (
-      <div>
-        <h2>hahah</h2>
-        <Button type={'primary'}>aaaa</Button>
-      </div>
-    )
+    return <WebView src={'https://open.zuoshouyisheng.com/'}></WebView>
   }
 }

@@ -2,10 +2,10 @@ import { VueComponent } from 'vue3-oop'
 import { Button } from '@nutui/nutui-taro'
 import { MiniHook } from '@vue3-oop/taro-hooks'
 import { abcRequest } from '@/api/http'
-import Taro from '@tarojs/taro'
+import Taro, { useRouter } from '@tarojs/taro'
 
 export default class First extends VueComponent {
-  router = Taro.useRouter()
+  router = useRouter()
   @MiniHook('Load')
   load() {
     abcRequest('/abc', { method: 'get', params: { a: 1 } }).then(res => console.log('res', res))
