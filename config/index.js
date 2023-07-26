@@ -1,5 +1,5 @@
 import { loadEnv } from '@vue3-oop/taro-plugin'
-import { UnifiedWebpackPluginV5 } from 'weapp-tailwindcss-webpack-plugin'
+import { UnifiedWebpackPluginV5 } from 'weapp-tailwindcss'
 
 const env = loadEnv()
 const isH5 = process.env.TARO_ENV === 'h5'
@@ -76,6 +76,7 @@ const config = {
                 appType: 'taro',
                 // 注意这一行(不传默认 react)
                 framework: 'vue3', // 'vue2' / 'vue3'
+                disabled: isH5,
               },
             ],
           },
