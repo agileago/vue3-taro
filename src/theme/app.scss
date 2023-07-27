@@ -1,4 +1,5 @@
 @import 'tailwindcss/base';
+@import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
 page,
@@ -13,6 +14,7 @@ body {
   margin: 0 auto;
 }
 
-:root {
+page,
+body {
   --nut-button-primary-color: rgb(76, 173, 76);
 }
