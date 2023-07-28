@@ -1,5 +1,5 @@
-import { loadEnv } from '@vue3-oop/taro-plugin'
-import { UnifiedWebpackPluginV5 } from 'weapp-tailwindcss'
+import { loadEnv } from "@vue3-oop/taro-plugin";
+import { UnifiedWebpackPluginV5 } from "weapp-tailwindcss";
 
 const env = loadEnv()
 const isH5 = process.env.TARO_ENV === 'h5'
@@ -13,7 +13,7 @@ const config = {
   framework: 'vue3',
   designWidth: 375,
   deviceRatio: {
-    375: 2 / 1,
+    375: 2,
   },
   sourceRoot: 'src',
   outputRoot: `dist`,
