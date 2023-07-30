@@ -77,6 +77,7 @@ const config = {
                 // 注意这一行(不传默认 react)
                 framework: 'vue3', // 'vue2' / 'vue3'
                 disabled: isH5,
+                injectAdditionalCssVarScope: true,
               },
             ],
           },
