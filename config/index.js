@@ -86,6 +86,7 @@ const config = {
     },
   },
   h5: {
+    useDeprecatedAdapterComponent: true,
     publicPath: process.env.VUE_APP_BASE_URL,
     router: {
       basename: process.env.VUE_APP_BASE_ROUTE.replace(/\/$/, ''),
