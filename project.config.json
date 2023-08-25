@@ -1,5 +1,5 @@
 {
-  "miniprogramRoot": "./dist",
+  "miniprogramRoot": "dist/",
   "projectname": "WechatAppDemo",
   "description": "WechatAppDemo",
   "appid": "wx3f627368f76b01c7",
@@ -8,7 +8,26 @@
     "es6": false,
     "postcss": false,
     "minified": false,
-    "checkSiteMap": false
+    "checkSiteMap": false,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "condition": false,
+    "minifyWXSS": false
   },
-  "compileType": "miniprogram"
+  "compileType": "miniprogram",
+  "libVersion": "3.0.1",
+  "srcMiniprogramRoot": "dist/",
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "condition": {},
+  "editorSetting": {
+    "tabIndent": "auto",
+    "tabSize": 4
+  },
+  "simulatorPluginLibVersion": {}
 }
