@@ -30,7 +30,6 @@ export default class First extends VueComponent {
         >
           11111
         </Button>
-        <view key={1}></view>
       </div>
     )
   }

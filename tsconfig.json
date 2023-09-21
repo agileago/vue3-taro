@@ -22,7 +22,7 @@
     "baseUrl": ".",
     "rootDir": ".",
     "jsx": "preserve",
-    "types": ["@tarojs/taro", "webpack-env", "vite/client"],
+    "types": ["@tarojs/taro", "webpack-env", "vite/client", "vue/jsx"],
     "paths": {
       "@/*": ["src/*"]
     }
