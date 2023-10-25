@@ -15,10 +15,12 @@
       "outputPath": ""
     },
     "condition": false,
-    "minifyWXSS": false
+    "minifyWXSS": false,
+    "ignoreUploadUnusedFiles": false,
+    "ignoreDevUnusedFiles": false
   },
   "compileType": "miniprogram",
-  "libVersion": "3.0.1",
+  "libVersion": "3.1.3",
   "srcMiniprogramRoot": "dist/",
   "packOptions": {
     "ignore": [],
