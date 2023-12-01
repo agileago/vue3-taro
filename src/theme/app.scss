@@ -9,6 +9,7 @@
 }
 
 page,
+html,
 body {
   font-family: -apple-system, 'Noto Sans', 'Helvetica Neue', Helvetica, 'Nimbus Sans L', Arial,
     'Liberation Sans', 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans CJK SC', 'Source Han Sans SC',
@@ -17,4 +18,10 @@ body {
   /* prettier-ignore */
   max-width: 750PX;
   margin: 0 auto;
+  height: 100%;
+}
+
+view,
+scroll-view {
+  box-sizing: border-box;
 }

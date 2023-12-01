@@ -1,3 +1,4 @@
+import './polyfill'
 import '@abraham/reflection'
 import './theme/app.scss'
 import { createApp } from 'vue'
